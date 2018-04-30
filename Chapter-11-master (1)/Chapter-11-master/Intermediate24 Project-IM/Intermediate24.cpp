@@ -1,10 +1,10 @@
-//Intermediate24.cpp
-//Stores monthly rainfall amounts in an array
-//Displays the monthly rainfall amounts, the
-//total annual rainfall amount, the average rainfall
-//amount, the highest rainfall amount, or the lowest
-//rainfall amount
-//Created/revised by <your name> on <current date>
+/*Intermediate24.cpp
+Stores monthly rainfall amounts in an array
+Displays the monthly rainfall amounts, the
+total annual rainfall amount, the average rainfall
+amount, the highest rainfall amount, or the lowest
+rainfall amount
+Created/revised by <ShawnD Herrick> on <04/30/2018>*/
 
 #include <iostream>
 using namespace std;
@@ -12,6 +12,9 @@ using namespace std;
 //function prototypes
 void displayMonthly(double rain[], int numElements);
 void displayTotal(double rainAmt[], int elements);
+void displayAverage(double rainAmt[], int elements);
+void displayHigh(double rainAmt[], int elements);
+void displayLow(double rainAmt[], int elements);
 int main()
 {	
 	//declare array and variable
@@ -25,27 +28,6 @@ int main()
 			<< x + 1 << ": ";
 		cin >> rainfall[x];
 	}  //end for
-	double total = 0.0;
-	double avg   = 0.0;
-	for (int x = 0; x < elements; x += 1)
-		total = total + rainAmt[x];
-	//end for
-	avg = total / elements;
-	cout << "Average rainfall: " << avg << endl;
-	double highest = rainAmt[0];
-	for (int x = 1; x < elements; x += 1)
-		if (rainAmt[x] > highest)
-			highest = rainAmt[x];
-	double lowest = rainAmt[0];
-	for (int x = 1; x < elements; x += 1)
-		if (rainAmt[x] < lowest)
-			lowest = rainAmt[x];
-		//end if
-	//end for
-	cout << "Lowest rainfall: " << lowest << endl;
-		//end if
-	//end for
-	cout << "Highest rainfall: " << highest << endl;
 	do  
     {
 		
@@ -98,15 +80,33 @@ void displayTotal(double rainAmt[], int elements)
 
 void displayAverage(double rainAmt[], int elements)
 {
-	
+	double total = 0.0;
+	double avg = 0.0;
+	for (int x = 0; x < elements; x += 1)
+		total = total + rainAmt[x];
+	//end for
+	avg = total / elements;
+	cout << "Average rainfall: " << avg << endl;
 }  //end of displayAverage function
 
 void displayHigh(double rainAmt[], int elements)
 {
-	
+	double highest = rainAmt[0];
+	for (int x = 1; x < elements; x += 1)
+	if (rainAmt[x] > highest)
+		highest = rainAmt[x];
+	//end if
+	//end for
+	cout << "Highest rainfall: " << highest << endl;
 }  //end of displayHigh function
 
 void displayLow(double rainAmt[], int elements)
 {
-	
+	double lowest = rainAmt[0];
+	for (int x = 1; x < elements; x += 1)
+	if (rainAmt[x] < lowest)
+		lowest = rainAmt[x];
+	//end if
+	//end for
+	cout << "Lowest rainfall: " << lowest << endl;
 }  //end of displayLow function
