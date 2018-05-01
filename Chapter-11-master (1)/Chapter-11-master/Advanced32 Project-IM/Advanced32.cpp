@@ -1,6 +1,6 @@
 //Advanced32.cpp - displays a grade based 
 //on the total points entered by the user
-//Created/revised by <your name> on <current date>
+//Created/revised by <ShawnD Herrick> on <05/01/2018>
 
 #include <iostream>
 using namespace std;
@@ -17,7 +17,9 @@ int main()
 	cin >> pointsPossible;
 
 	//declare arrays and fill with data
-	
+	int minPoints[] = { 0, pointsPossible % 50, pointsPossible % 60, pointsPossible % 70, pointsPossible % 90 };
+	int maxPoints[] = { pointsPossible % 60, pointsPossible % 70, pointsPossible % 80, pointsPossible % 90, pointsPossible };
+	char grade[] = { 'F', 'D', 'C', 'B', 'A' };
 	
 	//get total points
 	cout << "Enter points earned (negative number to stop program): ";

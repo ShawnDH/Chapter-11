@@ -1,14 +1,15 @@
 //Advanced28.cpp - displays the number of students
 //earning a specific score
-//Created/revised by <your name> on <current date>
+//Created/revised by <ShawnD Herrick> on <05/01/2018>
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
 	//declare array
-	
+	int scores[20] = { 83, 55, 3, 89, 30, 72, 61, 93, 92, 20, 12, 22, 71, 9, 74, 76, 6, 82, 19, 36};
 
 	//declare variables
 	int searchScore = 0;
@@ -35,6 +36,6 @@ int main()
 		cin >> searchScore;
 	}  //end while
 	
-	//system("pause");
+	system("pause");
 	return 0;
 }	//end of main function
