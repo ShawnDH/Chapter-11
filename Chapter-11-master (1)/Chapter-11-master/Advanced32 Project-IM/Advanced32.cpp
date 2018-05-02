@@ -17,25 +17,26 @@ int main()
 	cin >> pointsPossible;
 
 	//declare arrays and fill with data
-	int minPoints[] = { 0, pointsPossible % 50, pointsPossible % 60, pointsPossible % 70, pointsPossible % 90 };
-	int maxPoints[] = { pointsPossible % 60, pointsPossible % 70, pointsPossible % 80, pointsPossible % 90, pointsPossible };
+	double minPoints[] = { 0, pointsPossible * .60, pointsPossible * .70, pointsPossible * .80, pointsPossible * .90 };
+	double maxPoints[] = { pointsPossible * .59, pointsPossible * .69, pointsPossible * .79, pointsPossible * .89, pointsPossible };
 	char grade[] = { 'F', 'D', 'C', 'B', 'A' };
-	
 	//get total points
 	cout << "Enter points earned (negative number to stop program): ";
 	cin >> points;
 	
 	while (points >= 0)
 	{
-		//search for points in minPoints array
-		sub = 0;
-		while (sub < 5 && minPoints[sub] <= points)
-			sub += 1;
-		//end while
-
-		//display grade from grade array
-		cout << "Grade: " << grade[sub - 1] << endl << endl;
-		
+		if (points > pointsPossible)
+		{
+			cout << points << " is not a possible number. \n Please try again. \n ----------------" << endl;
+		}
+		for (int x = 0; x < 5; x++)
+		{
+			if (points >= minPoints[x] && points <= maxPoints[x])
+			{
+				cout << "Your grade is: " << grade[x] << endl;
+			}
+		}
 		cout << "Enter points earned (negative number to stop program): ";
 		cin >> points;
 	} //end while
